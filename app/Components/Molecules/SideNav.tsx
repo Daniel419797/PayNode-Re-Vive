@@ -29,13 +29,13 @@ const SideNav = () => {
 
   return (
     <div>
-      <nav className="hidden md:inset-y-0 sticky md:left-0 md:flex basis-[30%] h-[100dvh] overflow-y-hidden md:flex-col">
+      <nav className="inset-y-0 sticky left-0 flex basis-[10%] overflow-x-hidden md:basis-[30%] h-[100dvh] overflow-y-hidden flex-col">
         <div className="flex flex-col flex-grow pt-5 bg-white dark:bg-gray-800 overflow-y-auto border-r border-gray-200 dark:border-gray-700">
-          <div className="flex items-center flex-shrink-0 px-4">
+          <div className="flex items-center md:gap-[5px] flex-shrink-0 px-4">
             <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-teal-500 rounded-lg flex items-center justify-center">
               <Recycle className="w-5 h-5 text-white" />
             </div>
-            <h1 className="ml-3 text-xl font-bold bg-gradient-to-r from-purple-600 to-teal-600 bg-clip-text text-transparent">
+            <h1 className="ml-3 hidden md:flex text-xl font-bold bg-gradient-to-r from-purple-600 to-teal-600 bg-clip-text text-transparent">
               PayVerse
             </h1>
           </div>
@@ -57,7 +57,7 @@ const SideNav = () => {
                     }`}
                   >
                     <Icon className="mr-3 flex-shrink-0 h-5 w-5" />
-                    {link.title}
+                    <p className='hidden md:flex '>{link.title}</p>
                   </Link>
                 )
               })}

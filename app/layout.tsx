@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
 // import '../polyfills.js'
 import { Buffer } from 'buffer';
+// import Mobile from "./Components/Molecules/Mobile";
 import { createRequire } from 'module';
 import SideNav from '@/app/Components/Molecules/SideNav'
 // import { useWallet } from '@meshsdk/react';               
@@ -46,19 +47,20 @@ export default function RootLayout( {
         // className={`${geistSans.variable} ${geistMono.variable} 
         className="h-[100dvh] w-[100%] flex overflow-x-hidden "
       >
-        <div className="none md:fixed md:flex-1/5 w-0 md:w-[20%] ">
+        <div className="w-[10%] fixed md:flex-1/5 md:w-[20%] ">
           <SideNav />
         </div>
         
         
         <Providers >
-          <div className='right-[0] md:ml-[20%] w-[100%] md:w-[80%] '>
+          <div className='right-[0] ml-[10%] md:ml-[20%] w-[100%] md:w-[80%] '>
             <Navbar />
-            <div className="p-[1.5rem]">
+            <div className="p-[1rem] md:p-[1.5rem]">
               {children}
             </div>
             
           </div>
+          {/* <Mobile /> */}
         </Providers>
       </body>
     </html>
