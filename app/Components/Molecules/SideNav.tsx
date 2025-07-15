@@ -8,6 +8,7 @@ import {
   Wallet,
   Recycle,
   Vote,
+  User,
   Users,
   Home
 } from 'lucide-react'
@@ -20,6 +21,7 @@ const links = [
   { id: 4, title: 'Utilities', url: '/utilities', icon: UtilityPole },
   { id: 5, title: 'DAO Voting', url: '/dao', icon: Vote },
   { id: 6, title: 'Referrals', url: '/referrals', icon: Users },
+  { id: 7, title: 'Agents', url: '/agents', icon: User },
 ]
 
 const SideNav = () => {
