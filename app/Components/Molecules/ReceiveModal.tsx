@@ -1,5 +1,5 @@
 'use client';
-
+import Image from "next/image";
 import { useState, useEffect } from 'react';
 import { useWallet, useAddress } from '@meshsdk/react';
 import { X, Copy, Check, Download } from 'lucide-react';
@@ -56,7 +56,7 @@ export function ReceiveModal({ onCloseAction }: ReceiveModalProps) {
           <div className="text-center">
             <div className="bg-white p-4 rounded-lg inline-block mb-4">
               {qrCodeUrl && (
-                <img 
+                <Image
                   src={qrCodeUrl} 
                   alt="Wallet QR Code" 
                   className="w-48 h-48 mx-auto"

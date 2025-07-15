@@ -6,7 +6,7 @@ import { Proposal } from '@/app/types';
 import { CreateProposalModal } from '@/app/Components/Molecules/CreateProposalModal';
 import { VoteModal } from '@/app/Components/Molecules/VoteModal';
 
-const dao = () => {
+const Dao = () => {
   const { state, dispatch } = useApp();
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [showVoteModal, setShowVoteModal] = useState(false);
@@ -276,4 +276,4 @@ const dao = () => {
     </div>
   );
 }
-export default dao
+export default Dao

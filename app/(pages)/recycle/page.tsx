@@ -1,5 +1,5 @@
 'use client';
-
+import Image from "next/image";
 import React, { useState, useEffect } from 'react';
 // import { fetchNFTs } from '@/app/utils/fetchNfts';
 import { useCallback } from 'react';
@@ -224,7 +224,7 @@ const NFTRecycle = () => {
                   className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 group hover:shadow-lg transition-all duration-200"
                 >
                   <div className="aspect-square rounded-lg overflow-hidden mb-4 bg-gray-200 dark:bg-gray-600">
-                    <img
+                    <Image
                       src={nft.image}
                       alt={nft.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"

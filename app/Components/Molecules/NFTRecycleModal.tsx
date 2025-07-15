@@ -1,5 +1,5 @@
 'use client';
-
+import Image from "next/image";
 import { useState } from 'react';
 import { X, Recycle, AlertTriangle } from 'lucide-react';
 import { useWallet, useAddress } from '@meshsdk/react';
@@ -178,7 +178,7 @@ export function NFTRecycleModal({ nft, onCloseAction }: NFTRecycleModalProps) {
 
           <div className="text-center">
             <div className="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 relative">
-              <img
+              <Image
                 src={nft.image}
                 alt={nft.name}
                 className="w-full h-full object-cover"

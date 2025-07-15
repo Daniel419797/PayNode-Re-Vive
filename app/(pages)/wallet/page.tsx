@@ -1,4 +1,5 @@
 'use client'
+import Image from "next/image";
 import React, { useState, useEffect } from 'react';
 import { Send, QrCode, History, Plus, Download, Loader2 } from 'lucide-react';
 import { useApp } from '@/app/contexts/AppContext';
@@ -139,7 +140,7 @@ const Wallet = () => {
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {state.nfts.map(nft => (
                   <div key={nft.id} className="border rounded-lg p-4">
-                    <img src={nft.image} alt={nft.name} className="w-full h-32 object-cover rounded mb-2" />
+                    <Image src={nft.image} alt={nft.name} className="w-full h-32 object-cover rounded mb-2" />
                     <p className="font-semibold">{nft.name}</p>
                     <p className="text-sm text-gray-500 dark:text-gray-400">{nft.collection}</p>
                     <button
