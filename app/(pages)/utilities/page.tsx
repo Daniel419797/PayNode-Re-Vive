@@ -5,7 +5,7 @@ import { useApp } from '@/app/contexts/AppContext';
 import { AirtimeModal } from '@/app/Components/Molecules/AirtimeModal';
 import { BillPaymentModal } from '@/app/Components/Molecules/BillPaymentModal';
 
-const Utilities: React.FC = () => {
+const Utilities = () => {
   const { state } = useApp();
   const [showAirtimeModal, setShowAirtimeModal] = useState(false);
   const [showBillModal, setBillModal] = useState(false);
@@ -205,7 +205,7 @@ const Utilities: React.FC = () => {
       {showAirtimeModal && (
         <AirtimeModal 
           provider={selectedService}
-          onClose={() => setShowAirtimeModal(false)}
+          onCloseAction={() => setShowAirtimeModal(false)}
         />
       )}
       

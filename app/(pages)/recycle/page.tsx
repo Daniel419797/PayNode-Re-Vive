@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+// import { fetchNFTs } from '@/app/utils/fetchNfts';
+import { useCallback } from 'react';
 import { Recycle, Trophy, Star, Zap, Trash2, Sparkles } from 'lucide-react';
 import { useWallet } from '@meshsdk/react';
 import { BlockfrostProvider } from '@meshsdk/core';
@@ -12,10 +14,8 @@ import { NFT } from '@/app/types';
 const useNFTs = () => {
   const { wallet, connected } = useWallet();
 
-  const fetchNFTs = async (): Promise<NFT[]> => {
-    if (!connected || !wallet) {
-      return [];
-    }
+  const fetchNFTs = useCallback(async (): Promise<NFT[]> => {
+    if (!connected || !wallet) return [];
 
     try {
       const isTestnet = (await wallet.getUsedAddresses())[0]?.startsWith('addr_test') ?? true;
@@ -50,7 +50,7 @@ const useNFTs = () => {
           policyId,
           assetName,
           attributes: metadata.attributes || {},
-          rarity: metadata.rarity || 'common', // Add rarity or fetch from metadata/backend
+          rarity: metadata.rarity || 'common',
         });
       }
 
@@ -59,7 +59,7 @@ const useNFTs = () => {
       console.error('Error fetching NFTs:', error);
       return [];
     }
-  };
+  }, [wallet, connected]);
 
   return { fetchNFTs };
 };
@@ -69,7 +69,7 @@ interface NFTRecycleModalProps {
   onCloseAction: () => void;
 }
 
-const NFTRecycle: React.FC = () => {
+const NFTRecycle = () => {
   const { state, dispatch } = useApp();
   const { connected } = useWallet();
   const { fetchNFTs } = useNFTs();

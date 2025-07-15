@@ -19,7 +19,7 @@ export function CreateProposalModal({ onClose, onCreate }: CreateProposalModalPr
       id: crypto.randomUUID(),
       title,
       description,
-      category,
+      category: 'other',
       proposer: 'You', // or pull from state.user.name
       votesFor: 0,
       votesAgainst: 0,

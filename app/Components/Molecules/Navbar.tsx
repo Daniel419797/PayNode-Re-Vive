@@ -18,7 +18,7 @@ const Navbar = () => {
       <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between md:justify-end items-center h-16">
           <h1 className="text-xl md:hidden font-bold bg-gradient-to-r from-purple-600 to-teal-600 bg-clip-text text-transparent">
-            PayNode Re:Vive
+            PayVerse
           </h1>
 
           <div className="flex items-center space-x-4">

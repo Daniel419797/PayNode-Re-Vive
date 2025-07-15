@@ -56,7 +56,7 @@ export interface Proposal {
   id: string;
   title: string;
   description: string;
-  category: 'funding' | 'governance' | 'other';
+  category?: 'funding' | 'governance' | 'other';
   proposer: string;
   votesFor: number;
   votesAgainst: number;

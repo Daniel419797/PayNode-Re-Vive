@@ -6,7 +6,7 @@ import { Proposal } from '@/app/types';
 import { CreateProposalModal } from '@/app/Components/Molecules/CreateProposalModal';
 import { VoteModal } from '@/app/Components/Molecules/VoteModal';
 
-const dao: React.FC = () => {
+const dao = () => {
   const { state, dispatch } = useApp();
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [showVoteModal, setShowVoteModal] = useState(false);
